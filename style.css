@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+}
+.container {
+  position: relative;
+  height: 13vh;
+  background-color: #082032;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container label {
+  font-size: 2.6rem;
+  margin-left: 44px;
+  font-weight: 700;
+  padding: 32px;
+}
+
+.navbar {
+  margin-right: 76px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li a {
+  margin: 0 12px;
+  padding: 16px;
+  font-size: 1.2rem;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background: crimson;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+p {
+  margin: 0;
+  color: #082032;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.9rem;
+}
+
+.container .toggle_btn {
+  width: 6%;
+  height: 3vh;
+  position: relative;
+  position: absolute;
+  right: 4%;
+  cursor: pointer;
+  display: none;
+}
+.container .toggle_btn .line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.container .toggle_btn .line1 {
+  top: 0%;
+}
+
+.container .toggle_btn .line2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.container .toggle_btn .line3 {
+  top: 100%;
+  transform: translateY(-50%);
+}
+
+.container .cross .line {
+  transform-origin: top;
+}
+.container .cross .line1 {
+  transform: rotate(45deg) translateY(-50%);
+  top: 50%;
+}
+.container .cross .line2 {
+  width: 0;
+  opacity: 0;
+}
+.container .cross .line3 {
+  transform: rotate(-45deg) translateY(-50%);
+  top: 50%;
+}
+
+@media (max-width: 940px) {
+  .container .toggle_btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+  }
+
+  .container .toggle_btn:hover {
+    opacity: 0.8;
+  }
+
+  .navbar ul {
+    background-color: #082032;
+    position: fixed;
+    top: 13vh;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .container .cross ~ .navbar ul {
+    left: 0%;
+    z-index: 1;
+  }
+
+  .navbar ul li {
+    margin: 40px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    color: cyan;
+    background: none;
+  }
+}
